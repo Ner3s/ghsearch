@@ -4,7 +4,6 @@ import React, {
   useRef,
   useState,
   useCallback,
-  FC,
   CSSProperties,
 } from 'react';
 
@@ -22,7 +21,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   showIconPassword?: boolean;
 }
 
-const Input: FC<InputProps> = ({
+const Input: React.FC<InputProps> = ({
   name,
   containerStyle,
   icon: Icon,

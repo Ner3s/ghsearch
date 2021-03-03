@@ -10,6 +10,7 @@
  *
  */
 
-export function iconExample(){
-
-}
+export { default as IconDarkGithub } from './DarkGithub.svg';
+export { default as IconWhiteGithub } from './WhiteGithub.svg';
+export { default as IconDarkWave } from './DarkWave.svg';
+export { default as IconWhiteWave } from './WhiteWave.svg';

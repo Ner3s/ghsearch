@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, CSSProperties } from 'react';
+import React, { ButtonHTMLAttributes, CSSProperties } from 'react';
 
 import { Container } from './styles';
 
@@ -6,31 +6,33 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   loading?: boolean;
   buttonDisable?: boolean;
   extraStyles?: CSSProperties;
-  size?: 'normal' | 'small';
-  variant?: 'yellow' | 'black' | 'red';
-  textContent: string;
+  size?: string;
+  variant?: string;
   letterSpacing?: boolean;
+  width: number;
 };
 
-const Button: FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   loading,
   buttonDisable,
   extraStyles,
-  textContent,
+  width,
+  children,
   ...rest
 }) => (
   <Container
     type="button"
+    width={width}
     disabled={buttonDisable}
     buttonDisable={buttonDisable}
     style={extraStyles}
     {...rest}
   >
     {loading ? (
-      //fazer alguma coisa.
+      // fazer alguma coisa.
       <></>
     ) : (
-      <p>{textContent}</p>
+      <p>{children}</p>
     )}
   </Container>
 );

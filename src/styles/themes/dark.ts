@@ -6,8 +6,8 @@ const dark: typeof light = {
     text: '#fff',
 
     yellow: '#FFDF22',
-    white: '#fff',
-    black: '#000',
+    white: '#f1f1f1',
+    black: '#212121',
 
     yellow_linear_gradient: 'linear-gradient(107deg, #FFD503 0%, #FFDF22 100%)',
     red_linear_gradient: 'linear-gradient(99deg, #D90606 0%, #F11B1B 100%)',

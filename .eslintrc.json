@@ -39,6 +39,9 @@
         "depth": 3
       }
     ],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "prettier/prettier": "error",
     "no-console": "warn",
     "camelcase": "off",

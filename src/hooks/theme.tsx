@@ -1,5 +1,4 @@
-import {
-  FC,
+import React, {
   createContext,
   useContext,
   useState,
@@ -18,11 +17,12 @@ interface AppThemeContext {
   toggleTheme(): void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 const AppThemeContext = createContext({} as AppThemeContext);
 
-export const AppThemeProvider: FC = ({ children }) => {
+export const AppThemeProvider: React.FC = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeState>(() => {
-    const storedTheme = localStorage.getItem('@Ib-admin:theme') as ThemeState;
+    const storedTheme = localStorage.getItem('@Ghsearch:theme') as ThemeState;
 
     return storedTheme ? JSON.parse(storedTheme) : 'light';
   });
@@ -30,7 +30,7 @@ export const AppThemeProvider: FC = ({ children }) => {
   const toggleTheme = useCallback(() => {
     setCurrentTheme((prevTheme) => {
       const newTheme = prevTheme === 'light' ? 'dark' : 'light';
-      localStorage.setItem('@Ib-admin:theme', JSON.stringify(newTheme));
+      localStorage.setItem('@Ghsearch:theme', JSON.stringify(newTheme));
 
       return newTheme;
     });
@@ -51,7 +51,7 @@ export const AppThemeProvider: FC = ({ children }) => {
   );
 };
 
-export const useTheme = () => {
+export const useTheme: any = () => {
   const themeContext = useContext(AppThemeContext);
 
   if (!themeContext) {

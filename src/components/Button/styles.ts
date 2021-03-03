@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components';
 
 interface ButtonProps {
   buttonDisable?: boolean;
-  size?: 'normal' | 'small';
-  variant?: 'yellow' | 'black' | 'red';
+  size?: string;
+  variant?: string;
   letterSpacing?: boolean;
+  width: number;
 }
 
 export const Container = styled.button<ButtonProps>`
@@ -14,48 +15,20 @@ export const Container = styled.button<ButtonProps>`
 
   text-align: center;
 
-  width: 100%;
-  ${(props) => {
-    switch (props.size) {
-      case 'normal':
-        return css`
-          height: 5.8rem;
-        `;
-      case 'small':
-        return css`
-          height: 4.4rem;
-        `;
+  width: ${(props) => props.width}rem;
+  ${(props) =>
+    props.size &&
+    css`
+      height: ${props.size}rem;
+    `};
 
-      default:
-        return css`
-          height: 5.8rem;
-        `;
-    }
-  }}
-  ${(props) => {
-    switch (props.variant) {
-      case 'yellow':
-        return css`
-          background: ${props.theme.colors.yellow_linear_gradient};
-        `;
+  ${(props) =>
+    props.variant &&
+    css`
+      background-color: ${props.variant};
+    `}
 
-      case 'red':
-        return css`
-          background: ${props.theme.colors.red_linear_gradient};
-        `;
-
-      case 'black':
-        return css`
-          background: ${props.theme.colors.black_linear_gradient};
-        `;
-
-      default:
-        return css`
-          background: ${props.theme.colors.yellow_linear_gradient};
-        `;
-    }
-  }}
-  border-radius: 5rem;
+  border-radius: 1rem;
 
   transition: 180ms ease-in;
 

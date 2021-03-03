@@ -16,12 +16,12 @@ export const Container = styled.div<ContainerProps>`
   color: #000000;
 
   width: 100%;
-  height: 5rem;
+  height: 4.5rem;
 
   padding: 1.6rem 3.4rem;
 
   border: 0.5px solid #707070;
-  border-radius: 4rem;
+  border-radius: 1rem;
 
   transition: all 0.2s ease-in-out;
 
@@ -67,9 +67,9 @@ export const Container = styled.div<ContainerProps>`
 
     font-size: 2.1rem;
 
-    &::placeholder {
-      color: #000000;
-    }
+    /* &::placeholder {
+      color: $props => props.placeholderColor;
+    } */
   }
 `;
 
