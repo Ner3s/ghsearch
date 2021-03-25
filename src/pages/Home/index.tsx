@@ -3,6 +3,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import { FiSearch, FiGithub } from 'react-icons/fi';
+import { useHistory } from 'react-router';
 import * as Yup from 'yup';
 
 import { IconWhiteGithub, IconWhiteWave } from '~/assets/icons';
@@ -22,6 +23,7 @@ const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User>();
+  const router = useHistory();
 
   const handleSubmit = useCallback(async (data: FormProps) => {
     setLoading(true);
@@ -77,6 +79,9 @@ const Home: React.FC = () => {
                 width: '100%',
                 borderTopLeftRadius: 0,
                 borderTopRightRadius: 0,
+              }}
+              onClick={() => {
+                router.push(`/repos/${user.login}`);
               }}
             >
               <TextIcon>

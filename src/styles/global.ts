@@ -27,23 +27,23 @@ export default createGlobalStyle`
   }
 
   body, #root {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     position: relative;
     display: flex;
     flex-direction: column;
   }
 
-  html, body, #root {
+  /* html, body, #root {
     width: 100%;
     height: 100%;
-  }
+  } */
 
-  #root {
+  /* #root {
     height: 100%;
-  }
+  } */
 
   body, input, button {
-    font: 1.6rem 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font: 1.6rem 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.48;
   }
 

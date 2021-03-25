@@ -53,6 +53,15 @@ const UserCard: React.FC<IUserCard> = ({ user, children }) => {
             {user.location}
           </Text>
           <Text
+            textAlign="center"
+            fontSize={1.5}
+            fontWeight="400"
+            margin="0.2rem 0"
+            color="#fff"
+          >
+            Repositórios públicos: {user.public_repos}
+          </Text>
+          <Text
             textAlign="justify"
             fontWeight="400"
             fontSize={1.5}

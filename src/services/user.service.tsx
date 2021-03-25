@@ -11,9 +11,9 @@ const UserService = {
     return response.data;
   },
 
-  async getAllRepos(data: string): Promise<AxiosResponse<Repo>> {
-    const response = await api.get<Repo>(`/users/${data}/repos`);
-    return response;
+  async getAllRepos(data: string): Promise<Repo[]> {
+    const response = await api.get(`/users/${data}/repos`);
+    return response.data;
   },
 };
 
