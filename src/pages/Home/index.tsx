@@ -21,8 +21,11 @@ interface FormProps {
 
 const Home: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<User>();
+  const [historicArray, setHistoricArray] = useState<User[]>();
+
   const router = useHistory();
 
   const handleSubmit = useCallback(async (data: FormProps) => {
@@ -37,8 +40,15 @@ const Home: React.FC = () => {
       await schema.validate(data, { abortEarly: false });
 
       await UserService.search(data.search).then((response) => {
-        console.log(response);
+        // console.log(response);
         setUser(response);
+        const historic = localStorage.getItem('@GhSearch:historic');
+
+        // setHistoricArray([...JSON.parse(historic), response]);
+        localStorage.setItem(
+          '@GhSearch:historic',
+          JSON.stringify(historicArray),
+        );
       });
     } catch (error) {
       if (error instanceof Yup.ValidationError) {

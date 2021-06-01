@@ -43,8 +43,11 @@ const Repos: React.FC = () => {
                 width: '100%',
               }}
             >
-              <p style={{ color: '#444' }}>{item.default_branch}</p>
-              <p style={{ color: '#444' }}>{handlePushAt(item?.pushed_at)}</p>
+              <p style={{ color: 'green' }}>{item.default_branch}</p>
+              <p style={{ color: '#444' }}>
+                <span style={{ fontWeight: 600 }}>Último commit:</span>{' '}
+                {handlePushAt(item?.pushed_at)}
+              </p>
             </div>
           </Card>
         ))}
